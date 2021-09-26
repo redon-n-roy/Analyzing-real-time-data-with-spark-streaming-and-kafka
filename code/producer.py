@@ -18,7 +18,7 @@ def send_Mumbai():
         del dataval["timestamp_utc"]
         del dataval["timestamp_local"]
         output = json.dumps(dataval)
-        producer.send('crypto', output)
+        producer.send('weather', output)
         producer.flush()
         time.sleep(4)
 
@@ -33,7 +33,7 @@ def send_Chennai():
         del dataval["timestamp_utc"]
         del dataval["timestamp_local"]
         output = json.dumps(dataval)
-        producer.send('crypto', output)
+        producer.send('weather', output)
         producer.flush()
         time.sleep(4)
 
@@ -48,7 +48,7 @@ def send_Banglore():
         del dataval["timestamp_utc"]
         del dataval["timestamp_local"]
         output = json.dumps(dataval)
-        producer.send('crypto', output)
+        producer.send('weather', output)
         producer.flush()
         time.sleep(4)
 
@@ -63,7 +63,7 @@ def send_Hyderabad():
         del dataval["timestamp_utc"]
         del dataval["timestamp_local"]
         output = json.dumps(dataval)
-        producer.send('crypto', output)
+        producer.send('weather', output)
         producer.flush()
         time.sleep(4)
 
