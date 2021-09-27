@@ -4,7 +4,7 @@ from pyspark.sql.types import *
 
 spark = SparkSession \
     .builder \
-    .appName("cryptoData") \
+    .appName("weatherData") \
     .getOrCreate()
 
 
@@ -21,15 +21,16 @@ incoming_df = spark \
     .option("kafka.bootstrap.servers", "localhost:9092") \
     .option("subscribe","weather") \
     .option("startingOffsets", "latest") \
+    .option("failOnDataLoss", "false") \
     .load()
 
 raw_df = incoming_df.selectExpr("CAST(value AS STRING)")
 
 s_df = raw_df.select(from_json(raw_df.value, schema).alias("data"))
 
-btc_df = s_df.select(col("data.temp"),col("data.app_temp"),col("data.pres"),col("data.rh"),col("data.uv"),col("data.city"),col("data.ts"))
+weather_df = s_df.select(col("data.temp"),col("data.app_temp"),col("data.pres"),col("data.rh"),col("data.uv"),col("data.city"),col("data.ts"))
 
-output_df = btc_df.select(to_json(struct(col("*"))).alias("value"))
+output_df = weather_df.select(to_json(struct(col("*"))).alias("value"))
 
 query = output_df.writeStream.format("kafka").option("kafka.bootstrap.servers", "localhost:9092").option("checkpointLocation", "/tmp/spark_checkpoint").option("topic", "output").outputMode("update").start()
 
