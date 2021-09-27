@@ -90,7 +90,7 @@ python output.py
 
 ## Output
 <p align='center'>
-<img src ="https://user-images.githubusercontent.com/61430438/134848005-b8d75b10-06cc-49da-9a79-0afeb6690024.png" width="700" height="400">
+<img src ="https://user-images.githubusercontent.com/61430438/134852396-a244c518-073a-4814-93a6-f39000ff4678.gif" width="700" height="400">
 </p>
 
 ## Contirbutors
