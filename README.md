@@ -1,8 +1,16 @@
-# Analyzing real-time data with Spark Streaming and Kafka
+<h1 align='Center'> Analyzing real-time data with Spark Streaming and Kafka</h1>
+
+![ban](https://user-images.githubusercontent.com/61430438/134847738-85341b01-cccd-4be5-a01d-dd73d5549f60.png)
 
 ## Project Description
 
-The project deals with the processing the weather data from www.weatherbit.io using Kafka and Spark Streaming. Here we are simulating the streaming data using previous days data and visualizing the outcome using Matplotlib. The data processing program is developed using Python.
+&#160;&#160;&#160;&#160;&#160;The project deals with the processing the weather data from www.weatherbit.io using Kafka and Spark Streaming. Here we are simulating the streaming data using previous days data. Then we used a PySpark program to run the spark SQL queries to process the data consumed from the kafka topic along with their required dependencies and finally publish the processed data to another Kafka topic. Then we will consume the data into another python program and plotted the real time graph using Matplotlib.
+
+
+## Workflow
+<p align='center'>
+<img src="https://user-images.githubusercontent.com/61430438/134847903-91414708-78bd-45ba-be25-6c21b895cd77.png" width="800" height="300">
+</p>
 
 ## Technologies Used
 
@@ -14,6 +22,20 @@ The project deals with the processing the weather data from www.weatherbit.io us
 * Hadoop 2.7.7
 * kafka-python 2.0.2
 * requests 2.26.0
+
+   <p align='center'>
+  <img src="https://user-images.githubusercontent.com/61430438/133730265-6c9c8f4a-9675-46dd-a24a-7eb630ec6afc.png" alt="python" width="60" height="60"/> 
+   &#160;&#160;&#160;&#160;
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa479E6j4fipjDOpxCNJcuhMO9U4Ewuur-3dfxOTQrFRLd46j7WOW9zUO3dlOp8WojB6k&usqp=CAU" alt="kafka" width="150" height="60"/>
+  &#160;&#160;&#160;&#160;
+  <img src="https://user-images.githubusercontent.com/61430438/133730487-d4f8501e-378d-44b0-baf0-6c05d3497509.png" alt="spark" width="150" height="60"/> 
+   &#160;&#160;&#160;&#160;
+  <img src="https://www.vectorlogo.zone/logos/apache_hadoop/apache_hadoop-icon.svg" alt="hadoop" width="60" height="60"/> 
+   &#160;&#160;&#160;&#160;
+  <img src="https://user-images.githubusercontent.com/61430438/134849819-7d137789-ee8b-4089-9385-6ef1965c6894.png" alt="matplotlib" width="130" height="60"/>
+    <img src="https://user-images.githubusercontent.com/61430438/134850007-31da8908-f434-4770-8993-083a854b206a.png" alt="request" width="60" height="80"/>
+</p>
+
 
 ## Features
 
@@ -66,11 +88,16 @@ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 consume
 python output.py
 ```
 
+## Output
+<p align='center'>
+<img src ="https://user-images.githubusercontent.com/61430438/134848005-b8d75b10-06cc-49da-9a79-0afeb6690024.png" width="700" height="400">
+</p>
+
 ## Contirbutors
 * [Meenal Shree](https://github.com/meenal-shree)
 * [Rushikesh Lavate](https://github.com/Rushi21-kesh)
-* Neha Kumari
-* Nirosha M
+* [Neha Kumari](https://github.com/nkneha)
+* [Nirosha M](https://github.com/Niroshamurugan)
 
 ## License
 This project uses the [MIT](./LICENSE) license.
