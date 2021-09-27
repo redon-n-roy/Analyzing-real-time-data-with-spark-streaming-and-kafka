@@ -4,6 +4,8 @@ from matplotlib.animation import FuncAnimation
 from kafka import KafkaConsumer
 import time
 import threading
+import random
+
 plt_val_x=[]
 plt_val_temp=[]
 plt_val_apptemp=[]
@@ -19,13 +21,13 @@ def animate(i):
     axs[1, 0].cla()
     axs[1, 1].cla()   
     axs[0, 0].plot(plt_val_x, plt_val_temp,color='blue')
-    axs[0, 0].set_title('Temperature')
+    axs[0, 0].set_title('Temperature ({} : {})'.format(min(plt_val_temp),max(plt_val_temp)))
     axs[0, 1].plot(plt_val_x, plt_val_apptemp, color='green')
-    axs[0, 1].set_title('Feels like')
+    axs[0, 1].set_title('Feels like ({} : {})'.format(min(plt_val_apptemp),max(plt_val_apptemp)))
     axs[1, 0].plot(plt_val_x, plt_val_pres, color = 'red')
-    axs[1, 0].set_title('Pressure')
+    axs[1, 0].set_title('Pressure ({} : {})'.format(min(plt_val_pres),max(plt_val_pres)))
     axs[1, 1].plot(plt_val_x, plt_val_rh, color = 'purple')
-    axs[1, 1].set_title('Relative Humidity')
+    axs[1, 1].set_title('Relative Humidity ({} : {})'.format(min(plt_val_rh),max(plt_val_rh)))
 
 
 plt.style.use('fivethirtyeight')
